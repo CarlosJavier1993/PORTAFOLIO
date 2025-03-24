@@ -20,13 +20,14 @@ header {
 }
 
 .profile-pic {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%; /* Hace la imagen redonda */
     object-fit: cover; /* Ajusta la imagen dentro de su contenedor */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra elegante */
     margin-bottom: 20px; /* Espaciado debajo de la foto */
     margin-top: 30px;
+    margin: 10px auto; /* Centra la imagen y añade margen */
 }
 
 .about-me, .skills, .projects, .footer {
@@ -117,13 +118,15 @@ h2 {
 }
 
 .nav-top-right {
-    position: absolute; /* Fija el contenedor en una posición absoluta respecto al viewport */
-    top: 20px; /* Mantén el espacio superior */
-    right: 80px; /* Ajusta la distancia del borde derecho, alejándolos */
-    display: flex; /* Alinea los botones horizontalmente */
+    position: relative; /* Cambia de absoluto a relativo para evitar superposición */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se ajusten en nuevas líneas si es necesario */
     gap: 10px; /* Espaciado entre los botones */
-    z-index: 1000; /* Mantén los botones por encima de otros elementos */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 20px; /* Asegura espacio suficiente desde la parte superior */
+    z-index: 10; /* Mantén los botones visibles */
 }
+
 
 .background-video {
     position: absolute; /* Fija el video dentro del contenedor */
@@ -187,16 +190,17 @@ header p {
 
 /* Botón de CV */
 .cv-download {
-    display: inline-block; /* Botón como un bloque en línea */
-    padding: 15px 30px; /* Tamaño amplio */
+    display: block; /* Botón como un bloque en línea */
+    padding: 10px 15px; /* Tamaño amplio */
     background: linear-gradient(90deg, #000000, #434343); /* Degradado oscuro */
     color: white; /* Texto en blanco */
     text-decoration: none; /* Sin subrayado */
-    font-size: 1.2rem; /* Tamaño del texto */
+    font-size: 0.9rem; /* Tamaño del texto */
     font-weight: bold; /* Texto más grueso */
     border-radius: 50px; /* Bordes redondeados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra elegante */
     transition: all 0.3s ease; /* Transiciones suaves */
+    margin: 20px auto;
 }
 
 /* Hover: Interacción al pasar el cursor */
@@ -250,6 +254,8 @@ header p {
     header {
         height: 70vh; /* Reduce la altura para móviles */
         padding: 10px; /* Ajusta el espacio interno */
+        text-align: center; /* Asegura que los elementos estén centrados */
+        padding-top: 20px; /* Da espacio adicional para evitar superposición */
     }
 
     .profile-pic {
@@ -270,10 +276,13 @@ header p {
         top: 10px;
         left: 10px;
         gap: 10px; /* Reduce el espacio entre los logos */
+        position: static; /* Elimina la posición absoluta */
+        margin-top: 20px; /* Añade espacio superior */
     }
 
     .social-icon {
-        width: 40px; /* Ajusta el tamaño de los íconos */
+        width: 40px; /* Tamaño más pequeño para íconos */
+        height: auto;
     }
 
     .cv-download {
@@ -283,6 +292,8 @@ header p {
 
     .nav-top-right {
         right: 10px; /* Ajusta la posición de los botones */
+        flex-direction: column; /* Cambia de horizontal a vertical */
+        align-items: center; /* Centra los botones en el eje vertical */
     }
 
     header h1 {
