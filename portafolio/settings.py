@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+# Seguridad
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-n3w-s3cur3-k3y-g3n3r4ted')
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p$r5v9c%_qn5l!d&#-y+mqtp!i9m*hwb0xeui-+p^%!0x-43s$'
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-n3w-s3cur3-k3y-g3n3r4ted')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['portafolio-pi-gold.vercel.app', '127.0.0.1:8000', 'localhost']
+
 
 
 # Application definition

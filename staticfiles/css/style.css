@@ -1,0 +1,239 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+}
+
+header {
+    position: relative; /* Necesario para superponer contenido sobre el video */
+    width: 100vw; /* Ocupa todo el ancho del viewport */
+    height: 100vh; /* Ocupa toda la altura del viewport */
+    color: white; /* Asegura que el texto sea visible */
+    text-align: center; /* Centra el contenido dentro del header */
+    margin: 0; /* Elimina márgenes externos */
+    padding: 20px; /* Elimina relleno interno */
+    overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Hace la imagen redonda */
+    object-fit: cover; /* Ajusta la imagen dentro de su contenedor */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+    margin-bottom: 20px; /* Espaciado debajo de la foto */
+    margin-top: 30px;
+}
+
+.about-me, .skills, .projects, .footer {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.skills-list, .projects-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.skill-item, .project-card {
+    background: #e7f9e7;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.project-link, .cv-download {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-link:hover, .cv-download:hover {
+    background: #45a049;
+}
+.cv-download {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.cv-download:hover {
+    background-color: #0056b3;
+}
+/* Botones interactivos */
+/* Botones con colores oscuros */
+.nav-button {
+    padding: 15px 25px; /* Espaciado interno */
+    background: linear-gradient(90deg, #000000, #434343); /* Fondo degradado oscuro */
+    color: white; /* Texto blanco */
+    border-radius: 12px; /* Bordes redondeados para suavizar */
+    text-decoration: none; /* Quita subrayado */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 1rem; /* Tamaño del texto */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: all 0.3s ease; /* Animación en los efectos */
+}
+
+.nav-button:hover {
+    background: linear-gradient(90deg, #4CAF50, #8BC34A); /* Cambia el fondo a un gradiente llamativo */
+    color: black; /* Cambia el texto a negro en hover */
+    transform: scale(1.1); /* Agranda ligeramente el botón */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); /* Intensifica la sombra */
+}
+
+
+/* Botones activos o presionados */
+.nav-button:active {
+    transform: scale(1.05); /* Reduce ligeramente el tamaño al hacer clic */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6); /* Sombra menos pronunciada */
+}
+
+.nav-top-right {
+    position: absolute; /* Fija el contenedor en una posición absoluta respecto al viewport */
+    top: 20px; /* Mantén el espacio superior */
+    right: 80px; /* Ajusta la distancia del borde derecho, alejándolos */
+    display: flex; /* Alinea los botones horizontalmente */
+    gap: 10px; /* Espaciado entre los botones */
+    z-index: 1000; /* Mantén los botones por encima de otros elementos */
+}
+
+.background-video {
+    position: absolute; /* Fija el video dentro del contenedor */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Cubre todo el ancho */
+    height: 100vh; /* Cubre toda la altura */
+    object-fit: cover; /* Escala el video para cubrir sin distorsión */
+    z-index: -1; /* Envía el video al fondo detrás del contenido */
+}
+header h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    animation: glow 1.5s infinite alternate; /* Animación de brillo */
+    margin-bottom: 10px; /* Reduce el espacio inferior del título */
+    margin-top: 20px;
+}
+
+/* Animación de brillo */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #4CAF50, 0 0 20px #007bff;
+    }
+    to {
+        text-shadow: 0 0 20px #007bff, 0 0 30px #4CAF50;
+    }
+}
+
+header p {
+    font-size: 1.5rem; /* Aumenta el tamaño del texto */
+    font-weight: 500; /* Resalta el texto sin hacerlo demasiado grueso */
+    color: #f5f5f5; /* Gris claro para contrastar mejor */
+    background: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+    padding: 10px 20px; /* Espaciado interno alrededor del texto */
+    border-radius: 8px; /* Bordes redondeados para darle estilo */
+    display: inline-block; /* Ajusta el ancho del fondo al texto */
+    margin-top: -10px; /* Reduce el espaciado entre el título y la descripción */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+}
+
+.cv-section {
+    text-align: center; /* Centra el contenido de la sección */
+    margin: 50px auto; /* Espaciado superior e inferior */
+    padding: 20px;
+}
+
+.cv-section h2 {
+    font-size: 2rem; /* Tamaño grande para el título */
+    color: #007bff; /* Azul para el título */
+    margin-bottom: 20px;
+}
+
+/* Contenedor del botón */
+.cv-footer {
+    margin-top: 20px; /* Espaciado superior para separarlo del nav */
+    text-align: center; /* Centra el botón horizontalmente */
+}
+
+/* Botón de CV */
+.cv-download {
+    display: inline-block; /* Botón como un bloque en línea */
+    padding: 15px 30px; /* Tamaño amplio */
+    background: linear-gradient(90deg, #000000, #434343); /* Degradado oscuro */
+    color: white; /* Texto en blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1.2rem; /* Tamaño del texto */
+    font-weight: bold; /* Texto más grueso */
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+    transition: all 0.3s ease; /* Transiciones suaves */
+}
+
+/* Hover: Interacción al pasar el cursor */
+.cv-download:hover {
+    background: linear-gradient(90deg, #ff0000, #000000); /* Invertir el degradado */
+    transform: scale(1.1); /* Aumentar el tamaño ligeramente */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); /* Intensificar la sombra */
+}
+#typing-text {
+    display: inline-block; /* Asegura que el texto se mantenga en línea */
+    white-space: normal; /* Permite saltos de línea si el texto es largo */
+    color: #f5f5f5; /* Texto claro */
+    font-size: 1.5rem; /* Ajusta el tamaño del texto */
+    font-weight: 500; /* Negrita ligera */
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para mayor visibilidad */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+.social-links {
+    position: absolute; /* Ubicación en relación al viewport */
+    top: 20px; /* Distancia del borde superior */
+    left: 20px; /* Distancia del borde izquierdo */
+    display: flex; /* Coloca los logos uno al lado del otro */
+    gap: 15px; /* Espaciado entre los logos */
+    z-index: 1000; /* Asegura que los logos estén encima de otros elementos */
+}
+
+.social-icon {
+    width: 60px; /* Tamaño agrandado del icono */
+    height: auto; /* Mantiene la proporción del icono */
+    filter: invert(1); /* Cambia el color del logo a blanco */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Suaviza el hover y el cambio de color */
+}
+
+.social-icon:hover {
+    transform: scale(1.3); /* Aumenta aún más el tamaño al pasar el mouse */
+    filter: brightness(1.5); /* Hace que el logo brille un poco más al pasar el mouse */
+}
+.social-icon.linkedin {
+    width: 100px; /* Tamaño aumentado solo para LinkedIn */
+}
