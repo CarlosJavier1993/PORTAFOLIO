@@ -11,11 +11,13 @@
             position: relative; /* Asegura que el contenido esté sobre el video */
             width: 100%; /* Ancho completo */
             height: 100vh; /* Altura igual al viewport */
-            overflow: hidden; /* Evita el desbordamiento */
+            min-height: 100vh; /* Permitir que la sección se expanda con el contenido */
+            overflow: auto; /* Evita el desbordamiento */
             display: flex; /* Usar flexbox para organizar el contenido */
             flex-direction: column; /* Alinear contenido verticalmente */
             justify-content: center; /* Centrar verticalmente el contenido */
             text-align: center; /* Centrar el texto */
+            padding: 20px; /* Agregar espaciado interno */
         }
 
         /* Estilo del video */
@@ -39,6 +41,7 @@
             justify-content: center; /* Centrar horizontalmente las tarjetas */
             gap: 20px; /* Espaciado entre las tarjetas */
             padding: 20px;
+            width: 100%; /* Asegura que ocupe todo el ancho */
         }
 
         /* Tarjetas de proyectos */
@@ -186,6 +189,14 @@ h1 {
     50% { transform: translate(2px, -2px); }
     75% { transform: translate(-2px, -2px); }
     100% { transform: translate(0, 0); }
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Evita desplazamiento horizontal */
+    overflow-y: auto; /* Habilita desplazamiento vertical */
 }
 
 
