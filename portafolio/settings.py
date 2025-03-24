@@ -26,12 +26,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-n3w-s3cur3-k3y-g3n3r4ted')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['portafolio-pi-gold.vercel.app', '127.0.0.1:8000', 'localhost']
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'portafolio-pi-gold.vercel.app'  # Dominio de producción
+]
 
 
 
