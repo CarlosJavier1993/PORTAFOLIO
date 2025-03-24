@@ -10,7 +10,6 @@
 .projects-section {
             position: relative; /* Asegura que el contenido esté sobre el video */
             width: 100%; /* Ancho completo */
-            height: 100vh; /* Altura igual al viewport */
             min-height: 100vh; /* Permitir que la sección se expanda con el contenido */
             overflow: auto; /* Evita el desbordamiento */
             display: flex; /* Usar flexbox para organizar el contenido */
@@ -22,14 +21,13 @@
 
         /* Estilo del video */
 .background-video {
-            position: absolute; /* Ubicar el video dentro del contenedor */
+            position: fixed; 
             top: 0;
             left: 0;
-            width: 100%; /* Cubre todo el ancho del viewport */
-            height: 100%; /* Cubre todo el alto del viewport */
+            width: 100vw; /* Cubre todo el ancho del viewport */
+            height: 100vh; /* Cubre todo el alto del viewport */
             object-fit: cover; /* Ajustar el video para cubrir toda el área */
             z-index: -1; /* Envía el video detrás del contenido */
-            background-size: cover; /* Ajusta el tamaño para cubrir todo el contenedor */
         }
 
         /* Contenido principal */
