@@ -7,13 +7,10 @@ from decouple import config
 # Claves secretas y modo debug (ajustar en producción)
 SECRET_KEY = config('SECRET_KEY', default='fNwSf2g5RixBazevRNW2-lVhNlBFXCbkNppTVfOVae7PdYX_rQ0vb1i09ThDPRcrAl0')
 DEBUG = False
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app']
+ALLOWED_HOSTS = ['https://portafolio-vtpb.onrender.com/', '127.0.0.1']
 
 # Directorio base del proyecto
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Hosts permitidos para acceder al proyecto
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app']
 
 # Aplicaciones instaladas en el proyecto
 INSTALLED_APPS = [
@@ -35,6 +32,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 # Archivo de enrutamiento principal
@@ -92,9 +90,11 @@ USE_TZ = True
 
 # Configuración de archivos estáticos
 STATIC_URL = '/static/'  # URL base para servir archivos estáticos
-STATICFILES_DIRS = [BASE_DIR / 'portafolio_app/static']  # Rutas donde buscar archivos estáticos
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Carpeta de destino para los archivos recopilados (collectstatic)
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Configuración de archivos multimedia (opcional, si necesitas subir archivos)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
