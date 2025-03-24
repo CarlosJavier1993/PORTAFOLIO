@@ -7,7 +7,7 @@ from decouple import config
 # Claves secretas y modo debug (ajustar en producción)
 SECRET_KEY = config('SECRET_KEY', default='fNwSf2g5RixBazevRNW2-lVhNlBFXCbkNppTVfOVae7PdYX_rQ0vb1i09ThDPRcrAl0')
 DEBUG = False
-ALLOWED_HOSTS = ['https://portafolio-vtpb.onrender.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['portafolio-vtpb.onrender.com','LocalHost', '127.0.0.1']
 
 # Directorio base del proyecto
 BASE_DIR = Path(__file__).resolve().parent.parent
