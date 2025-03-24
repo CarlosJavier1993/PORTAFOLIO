@@ -17,11 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from portafolio_app import views
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('habilidades/', views.habilidades, name='habilidades'),
     path('proyectos/', views.proyectos, name='proyectos'),
+    path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico', permanent=True)),
+
+
 ]
 
