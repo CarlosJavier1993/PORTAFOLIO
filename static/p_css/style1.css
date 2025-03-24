@@ -30,12 +30,13 @@ header {
 }
 
 .about-me, .skills, .projects, .footer {
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 20px;
     max-width: 800px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Se ajusta al 90% del ancho de la pantalla */
 }
 
 h2 {
@@ -76,12 +77,13 @@ h2 {
 }
 .cv-download {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 8px 15px;
     background-color: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
 }
 .cv-download:hover {
     background-color: #0056b3;
@@ -224,7 +226,7 @@ header p {
 }
 
 .social-icon {
-    width: 60px; /* Tamaño agrandado del icono */
+    width: 10%; /* Tamaño agrandado del icono */
     height: auto; /* Mantiene la proporción del icono */
     filter: invert(1); /* Cambia el color del logo a blanco */
     transition: transform 0.3s ease, filter 0.3s ease; /* Suaviza el hover y el cambio de color */
@@ -236,4 +238,59 @@ header p {
 }
 .social-icon.linkedin {
     width: 100px; /* Tamaño aumentado solo para LinkedIn */
+}
+
+/* Para pantallas más pequeñas, como teléfonos */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Ajusta el tamaño del texto */
+        padding: 0 10px; /* Reduce el espacio general */
+    }
+
+    header {
+        height: 70vh; /* Reduce la altura para móviles */
+        padding: 10px; /* Ajusta el espacio interno */
+    }
+
+    .profile-pic {
+        width: 120px; /* Reduce el tamaño de la imagen de perfil */
+        height: 120px;
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Reduce el tamaño del texto del título */
+    }
+
+    .skills-list, .projects-list {
+        flex-direction: column; /* Coloca los elementos en una sola columna */
+        gap: 15px;
+    }
+
+    .social-links {
+        top: 10px;
+        left: 10px;
+        gap: 10px; /* Reduce el espacio entre los logos */
+    }
+
+    .social-icon {
+        width: 40px; /* Ajusta el tamaño de los íconos */
+    }
+
+    .cv-download {
+        padding: 10px 20px; /* Reduce el tamaño del botón */
+        font-size: 1rem; /* Ajusta el tamaño del texto */
+    }
+
+    .nav-top-right {
+        right: 10px; /* Ajusta la posición de los botones */
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Reduce el tamaño del texto principal */
+    }
+
+    header p {
+        font-size: 1.2rem; /* Ajusta el tamaño del texto del párrafo */
+        padding: 5px 10px; /* Reduce el espacio interno */
+    }
 }
