@@ -92,13 +92,13 @@ h2 {
 /* Botones interactivos */
 /* Botones con colores oscuros */
 .nav-button {
-    padding: 15px 25px; /* Espaciado interno */
+    padding: 8px 15px; /* Espaciado interno */
     background: linear-gradient(90deg, #000000, #434343); /* Fondo degradado oscuro */
     color: white; /* Texto blanco */
     border-radius: 12px; /* Bordes redondeados para suavizar */
     text-decoration: none; /* Quita subrayado */
     font-weight: bold; /* Texto en negrita */
-    font-size: 1rem; /* Tamaño del texto */
+    font-size: 0.9rem; /* Tamaño del texto */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra suave */
     transition: all 0.3s ease; /* Animación en los efectos */
 }
@@ -118,7 +118,7 @@ h2 {
 }
 
 .nav-top-right {
-    position: relative; /* Cambia de absoluto a relativo para evitar superposición */
+    position: static; /* Cambia de absoluto a relativo para evitar superposición */
     display: flex;
     flex-wrap: wrap; /* Permite que los botones se ajusten en nuevas líneas si es necesario */
     gap: 10px; /* Espaciado entre los botones */
@@ -221,16 +221,19 @@ header p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra sutil */
 }
 .social-links {
-    position: absolute; /* Ubicación en relación al viewport */
+    position: static; /* Ubicación en relación al viewport */
     top: 20px; /* Distancia del borde superior */
     left: 20px; /* Distancia del borde izquierdo */
     display: flex; /* Coloca los logos uno al lado del otro */
-    gap: 15px; /* Espaciado entre los logos */
+    gap: 10px; /* Espaciado entre los logos */
     z-index: 1000; /* Asegura que los logos estén encima de otros elementos */
+    flex-wrap: wrap; /* Coloca los íconos en nuevas líneas si es necesario */
+    justify-content: center; /* Centra los íconos horizontalmente */
+    margin-top: 20px;
 }
 
 .social-icon {
-    width: 10%; /* Tamaño agrandado del icono */
+    width: 40px; /* Tamaño agrandado del icono */
     height: auto; /* Mantiene la proporción del icono */
     filter: invert(1); /* Cambia el color del logo a blanco */
     transition: transform 0.3s ease, filter 0.3s ease; /* Suaviza el hover y el cambio de color */
@@ -261,6 +264,7 @@ header p {
     .profile-pic {
         width: 120px; /* Reduce el tamaño de la imagen de perfil */
         height: 120px;
+        margin: 10px auto; /* Centra la imagen y separa los elementos */
     }
 
     h2 {
@@ -275,9 +279,10 @@ header p {
     .social-links {
         top: 10px;
         left: 10px;
-        gap: 10px; /* Reduce el espacio entre los logos */
+        gap: 15px; /* Reduce el espacio entre los logos */
         position: static; /* Elimina la posición absoluta */
         margin-top: 20px; /* Añade espacio superior */
+        flex-direction: row; /* Coloca los íconos en una sola línea */
     }
 
     .social-icon {
@@ -286,8 +291,10 @@ header p {
     }
 
     .cv-download {
+        display: block; /* Coloca el botón en su propia línea */
         padding: 10px 20px; /* Reduce el tamaño del botón */
         font-size: 1rem; /* Ajusta el tamaño del texto */
+        margin: 20px auto; /* Centra el botón y añade espacio superior */
     }
 
     .nav-top-right {
