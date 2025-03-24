@@ -1,0 +1,127 @@
+#habilidades, #proyectos {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.skill-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.skill-card h3 {
+    margin: 10px 0;
+    color: #4CAF50;
+}
+.habilidades-header {
+    text-align: center;
+    background: url('/static/img/habilidades-background.png') no-repeat center center;
+    background-size: cover;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: glow 1.5s infinite alternate; /* Brillo animado */
+    margin-top: 0px;
+}
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50;
+    }
+    to {
+        text-shadow: 0 0 20px #007bff, 0 0 30px #007bff;
+    }
+}
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Cubre todo el ancho */
+    height: 100vh; /* Cubre toda la altura */
+    object-fit: cover; /* Escala correctamente sin distorsión */
+    z-index: -1; /* Coloca el video detrás del contenido */
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Evita desplazamientos horizontales */
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+}
+
+.skill-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+.nav-button {
+    padding: 15px 30px; /* Tamaño amplio */
+    margin: 10px;
+    background: linear-gradient(90deg, #2c2c2c, #000000); /* Mezcla de gris oscuro y negro */
+    color: white; /* Texto en blanco para contraste */
+    border: none; /* Sin bordes */
+    border-radius: 50px; /* Bordes redondeados */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-weight: bold; /* Texto más grueso */
+    font-size: 1.2rem; /* Tamaño del texto */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+    transition: all 0.3s ease; /* Suavidad en los efectos */
+}
+
+/* Efecto al pasar el cursor (hover) */
+.nav-button:hover {
+    background: linear-gradient(90deg, #000000, #2c2c2c); /* Invierte el degradado */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
+    color: #f5f5f5; /* Cambia el color del texto a un gris claro */
+}
+.skills-content h2 {
+    color: white; /* Texto principal en blanco */
+    font-size: 3rem; /* Tamaño grande */
+    font-weight: bold; /* Texto grueso */
+    text-transform: uppercase; /* Convertir todo el texto a mayúsculas */
+    text-shadow: 0 0 10px #4CAF50, 0 0 20px #007bff; /* Efecto de brillo */
+    animation: glow 1.5s infinite alternate; /* Animación de brillo */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Animación de brillo */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #4CAF50, 0 0 20px #007bff;
+    }
+    to {
+        text-shadow: 0 0 20px #007bff, 0 0 30px #4CAF50;
+    }
+}
+@keyframes vibrate {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0, 0); }
+}
+.skill-card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, transform 0.2s ease; /* Suaviza otros cambios visuales */
+}
+
+.skill-card:hover {
+    animation: vibrate 0.2s linear infinite; /* Efecto vibración */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
+    cursor: pointer; /* Indica interactividad */
+}
+

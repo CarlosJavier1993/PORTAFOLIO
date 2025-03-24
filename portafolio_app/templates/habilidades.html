@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilidades - Portafolio de Carlos</title>
+    <link rel="stylesheet" href="{% static 'css/habilidades.css' %}">
+    <style>
+
+.skills-section {
+    display: flex; /* Usar Flexbox para centrar */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    width: 100vw; /* Ancho completo del viewport */
+    min-height: 100vh; /* Altura mínima igual al viewport */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar relleno */
+    position: relative; /* Relativo al viewport */
+    overflow: hidden; /* Evitar desbordamientos */
+    background-size: cover; /* Ajusta el tamaño para cubrir todo el contenedor */
+}
+        /* Estilo directo en el video para ocupar toda la página */
+        .background-video {
+            position: fixed; /* Fija el video para que no esté limitado por la sección */
+            top: 0;
+            left: 0;
+            width: 100vw; /* Ocupa todo el ancho del viewport */
+            height: 100vh; /* Ocupa toda la altura del viewport */
+            object-fit: cover; /* Ajusta el video sin distorsión */
+            z-index: -1; /* Envía el video al fondo detrás del contenido */
+        }
+
+/* Ajusta el contenido para centrarlo */
+.skills-content {
+    text-align: center; /* Centrar el texto */
+    padding: 30px 20px; /* Espaciado interno */
+    z-index: 1; /* Mantener el contenido sobre el video */
+    max-width: 1200px; /* Limitar el ancho máximo del contenido */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.skills-list {
+    display: flex; /* Usar Flexbox para organizar las herramientas */
+    flex-wrap: wrap; /* Permitir que pasen a la siguiente fila si es necesario */
+    justify-content: center; /* Centrar las herramientas horizontalmente */
+    gap: 20px; /* Espaciado entre las herramientas */
+    margin: 20px 0; /* Espaciado superior e inferior */
+    width: 100%; /* Asegurar que cubran todo el ancho */
+}
+#habilidades, #proyectos {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.skill-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.skill-card h3 {
+    margin: 10px 0;
+    color: #4CAF50;
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Evita desplazamientos horizontales */
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+}
+
+.skill-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+.nav-top-right {
+    position: absolute; /* Fija el contenedor respecto al viewport */
+    top: 20px; /* Distancia del borde superior */
+    right: 20px; /* Distancia del borde derecho */
+    display: flex; /* Alinea los botones horizontalmente */
+    gap: 10px; /* Espaciado entre los botones */
+    z-index: 1000; /* Asegura que los botones estén encima de otros elementos */
+}
+
+/* Estilo base de los botones */
+.nav-button {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #000000, #434343); /* Degradado oscuro */
+    color: white;
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+    transition: all 0.3s ease;
+}
+
+/* Hover: Cambia el color cuando pasa el cursor */
+.nav-button:hover {
+    background: linear-gradient(90deg, #4CAF50, #8BC34A); /* Cambia a un color llamativo */
+    color: black;
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
+}
+
+.skills-content h2 {
+    color: white; /* Texto principal en blanco */
+    font-size: 3rem; /* Tamaño grande */
+    font-weight: bold; /* Texto grueso */
+    text-transform: uppercase; /* Convertir todo el texto a mayúsculas */
+    text-shadow: 0 0 10px #4CAF50, 0 0 20px #007bff; /* Efecto de brillo */
+    animation: glow 1.5s infinite alternate; /* Animación de brillo */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Animación de brillo */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #4CAF50, 0 0 20px #007bff;
+    }
+    to {
+        text-shadow: 0 0 20px #007bff, 0 0 30px #4CAF50;
+    }
+}
+@keyframes vibrate {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0, 0); }
+}
+.skill-card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, transform 0.2s ease; /* Suaviza otros cambios visuales */
+}
+
+.skill-card:hover {
+    animation: vibrate 0.2s linear infinite; /* Efecto vibración */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
+    cursor: pointer; /* Indica interactividad */
+}
+.skills-title {
+    font-size: 3rem; /* Tamaño grande del texto */
+    font-weight: bold; /* Texto grueso */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    color: white; /* Color base */
+    text-align: center; /* Centra el texto */
+    display: inline-block; /* Ajustar el ancho al texto */
+}
+
+.skills-title span {
+    display: inline-block; /* Cada letra será tratada por separado */
+    animation: sparkle 1.5s infinite; /* Aplica animación de destello */
+}
+
+/* Animación de destello */
+@keyframes sparkle {
+    0%, 100% {
+        color: white; /* Color inicial y final */
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+    50% {
+        color: #0b2099; /* Color dorado en el punto máximo del destello */
+        text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(8, 6, 143, 0.9);
+    }
+}
+
+.skills-2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative; /* Necesario para el fondo animado */
+    padding: 10px 20px; /* Espaciado interno */
+    background: linear-gradient(90deg, #4CAF50, #2196F3, #910909, #0e6b6b);
+    background-size: 200%; /* Amplía el tamaño del fondo */
+    animation: bgMove 3s linear infinite; /* Movimiento del fondo */
+}
+
+/* Animación del fondo */
+@keyframes bgMove {
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 200%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header class="habilidades-header">
+        <h1 class="skills-title">
+            <span>H</span><span>A</span><span>B</span><span>I</span><span>L</span><span>I</span><span>D</span><span>A</span><span>D</span><span>E</span><span>S</span>
+        </h1>
+        
+        <nav class="nav-top-right">
+            <a href="{% url 'home' %}" class="nav-button">Home</a>
+            <a href="{% url 'proyectos' %}" class="nav-button">Proyectos</a>
+        </nav>
+    </header>
+    <section class="skills-section">
+        <video autoplay loop muted playsinline class="background-video">
+            <source src="{% static 'videos/fondo-habilidades.mp4' %}" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="skills-content">
+            <h2 class="skills-2">Mis Habilidades</h2>
+            <div class="skills-list">
+                <div class="skill-card">
+                    <img src="{% static 'img/html-logo.avif' %}" alt="HTML" class="skill-img">
+                    <h3>HTML</h3>
+                    <p>Es la base de cualquier sitio web que desarrollo. Utilizo HTML para estructurar de manera semántica las páginas web, asegurándome de que sean accesibles y organizadas. Por ejemplo, cuando diseño un portal de noticias, defino los encabezados, secciones y vínculos mediante etiquetas HTML.</p>
+                </div>
+                <div class="skill-card">
+                    <img src="{% static 'img/css-logo.png' %}" alt="CSS" class="skill-img">
+                    <h3>CSS</h3>
+                    <p>Aquí es donde le doy vida al diseño. Utilizo CSS para aplicar estilos modernos y responsivos que se ajusten a distintos dispositivos. Además, empleo frameworks como Bootstrap para agilizar el proceso y garantizar una presentación visual atractiva en proyectos como portafolios personales o tiendas online.</p>
+                </div>
+                <div class="skill-card">
+                    <img src="{% static 'img/JavaScript-logo.png' %}" alt="JavaScript" class="skill-img">
+                    <h3>JavaScript</h3>
+                    <p>Con JavaScript, añado interactividad y dinamismo. Desde formularios que validan la entrada de datos en tiempo real hasta animaciones que mejoran la experiencia del usuario, este lenguaje me permite transformar sitios estáticos en aplicaciones web interactivas. Un ejemplo es el desarrollo de dashboards para análisis de datos.</p>
+                </div>
+                <div class="skill-card">
+                    <img src="{% static 'img/python-logo.png' %}" alt="Python" class="skill-img">
+                    <h3>Python</h3>
+                    <p>Lo uso principalmente para el backend en aplicaciones web. Python me ayuda a gestionar la lógica detrás de los sistemas, como el manejo de usuarios y la interacción con bases de datos. Es ideal cuando trabajo en plataformas de e-commerce o sistemas de gestión empresarial.</p>
+                </div>
+                <div class="skill-card">
+                    <img src="{% static 'img/django-logo.png' %}" alt="Django" class="skill-img">
+                    <h3>Django</h3>
+                    <p>Este framework basado en Python es mi herramienta preferida para desarrollar aplicaciones completas. Django me permite integrar rápidamente funcionalidades avanzadas como autenticación de usuarios y gestión de contenidos. Un proyecto típico sería una plataforma para reservas de eventos.</p>
+                </div>
+                <div class="skill-card">
+                    <img src="{% static 'img/pandas-logo.png' %}" alt="Pandas" class="skill-img">
+                    <h3>Pandas</h3>
+                    <p>En proyectos que implican análisis de datos, pandas se convierte en mi aliado para manipular grandes conjuntos de información. Lo utilizo para filtrar, transformar y analizar datos en tableros interactivos o reportes automatizados, como los que he desarrollado para analizar estadísticas de ventas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Portafolio de Carlos</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <img src="{% static 'img/fotoDePerfil.jpeg' %}" alt="Foto de perfil" class="profile-pic">
+        <video autoplay loop muted playsinline class="background-video">
+            <source src="{% static 'videos/home-fondo.mp4' %}" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        <h1>Carlos Ramos / Programador</h1>
+        <p id="typing-text"></p>
+        <div class="social-links">
+            <!-- Logo GitHub -->
+            <a href="https://github.com/CarlosJavier1993" target="_blank">
+                <img src="{% static 'img/github-logo.png' %}" alt="GitHub" class="social-icon">
+            </a>
+            <!-- Logo LinkedIn -->
+            <a href="https://www.linkedin.com/in/carlos-j-ramos-a9b70721b/" target="_blank">
+                <img src="{% static 'img/linkedin-logo.png' %}" alt="LinkedIn" class="social-icon linkedin">
+            </a>
+        </div>
+        <nav>
+            <nav class="nav-top-right">
+            <a href="{% url 'habilidades' %}" class="nav-button">Habilidades</a>
+            <a href="{% url 'proyectos' %}" class="nav-button">Proyectos</a>
+        </nav>
+
+        <div class="cv-footer">
+            <a href="{% static 'cv/Carlos_CV.pdf' %}" download="Carlos_CV.pdf" class="cv-download">Descargar CV</a>
+        </div>
+
+    </header>
+    <script>
+        // Texto que se escribirá
+        const text = "Soy Carlos, un desarrollador web comprometido con la creación de experiencias digitales innovadoras y funcionales. Mi enfoque combina un diseño intuitivo con soluciones tecnológicas efectivas, asegurando resultados sólidos para cada proyecto.";
+        const typingElement = document.getElementById("typing-text");
+        let index = 0;
+    
+        // Función para escribir letra por letra
+        function typeLetterByLetter() {
+            if (index < text.length) {
+                typingElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeLetterByLetter, 100); // Velocidad: cada 100ms
+            }
+        }
+    
+        // Inicia el efecto de escritura
+        typeLetterByLetter();
+    </script>
+    
+</body>
+</html>
