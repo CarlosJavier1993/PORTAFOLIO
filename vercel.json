@@ -4,6 +4,9 @@
         "src": "manage.py",
         "use": "@vercel/python"
       }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "/" }
     ]
   }
   
