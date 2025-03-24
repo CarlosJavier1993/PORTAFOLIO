@@ -9,8 +9,8 @@ venv/
 *.env
 
 # Django
-/staticfiles/
-/media/
+#/staticfiles/
+#/media/
 
 # Editor/OS
 .vscode/
