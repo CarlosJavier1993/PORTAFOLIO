@@ -3,6 +3,10 @@
 import os
 import sys
 
+from portafolio.wsgi import application
+
+app = application
+
 
 def main():
     """Run administrative tasks."""
