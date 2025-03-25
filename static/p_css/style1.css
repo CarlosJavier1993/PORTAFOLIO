@@ -258,13 +258,14 @@ header p {
         height: 70vh; /* Reduce la altura para móviles */
         padding: 10px; /* Ajusta el espacio interno */
         text-align: center; /* Asegura que los elementos estén centrados */
-        padding-top: 10px; /* Da espacio adicional para evitar superposición */
+        padding-top: 20px 10px; /* Da espacio adicional para evitar superposición */
     }
 
     .profile-pic {
-        width: 100px; /* Reduce el tamaño de la imagen de perfil */
-        height: 100px;
-        margin: 10px auto; /* Centra la imagen y separa los elementos */
+        width: 120px; /* Reduce el tamaño de la imagen de perfil */
+        height: 120px;
+        margin: 30px auto; /* Centra la imagen y separa los elementos */
+        display: block; /* Asegura que sea un elemento independiente */
     }
 
     h2 {
@@ -285,6 +286,7 @@ header p {
         flex-direction: row; /* Coloca los íconos en una sola línea */
         display: flex;
         justify-content: center;
+        flex-wrap: wrap; /* Permite que los íconos se reorganicen en nuevas líneas si es necesario */
     }
 
     .social-icon {
@@ -305,7 +307,7 @@ header p {
         align-items: center; /* Centra los botones en el eje vertical */
         position: static;
         display: flex;
-        gap: 10px;
+        gap: 15px;
         margin-top: 20px;
     }
 
@@ -319,8 +321,8 @@ header p {
     }
     .nav-button {
         width: 80%; /* Ajusta el ancho de los botones para móviles */
-        font-size: 0.9rem; /* Reduce el tamaño del texto */
-        padding: 8px 15px; /* Reduce el espacio interno */
+        font-size: 0.8rem; /* Reduce el tamaño del texto */
+        padding: 10px 15px; /* Reduce el espacio interno */
     }
 
 }
